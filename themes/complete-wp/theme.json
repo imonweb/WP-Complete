@@ -2,6 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
   "settings": {
+    "appearanceTools": true,
     "color": {
       "defaultPalette": false,
       "palette": [
@@ -57,13 +58,6 @@
               "slug": "u-pacifico",
               "name": "Complete Pacifico" 
             }
-          ],
-          "fontSizes": [
-            { "slug": "small", "size": "0.75rem", "name": "Small" },
-            { "slug": "medium", "size": "1.25rem", "name": "Medium" },
-            { "slug": "large", "size": "2.25rem", "name": "Large" },
-            { "slug": "x-large", "size": "3rem", "name": "Extra Large" },
-            { "slug": "gigantic", "size": "3.75rem", "name": "Gigantic" }
           ]
         }
       },
@@ -93,7 +87,33 @@
           "slug": "u-rubik",
           "name": "Complete Rubik" 
         }
-      ]
+      ],
+      "fontSizes": [
+        { "slug": "small", "size": "0.75rem", "name": "Small" },
+        { "slug": "medium", "size": "1.25rem", "name": "Medium" },
+        { "slug": "large", "size": "2.25rem", "name": "Large" },
+        { "slug": "x-large", "size": "3rem", "name": "Extra Large" },
+        { "slug": "gigantic", "size": "3.75rem", "name": "Gigantic" }
+      ],
+      "lineHeight": true,
+      "dropCap": true,
+      "fontWeight": true,
+      "fontStyle": true,
+      "textTransform": true,
+      "letterSpacing": true,
+      "textDecoration": true
+    },
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1100px"
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "units": [
+        "px", "em", "rem", "vh", "vw", "%"
+      ],
+      "blockGap": true
     }
   },
   "styles": {
@@ -121,7 +141,36 @@
           "style": "solid",
           "color": "var(--wp--preset--color--u-primary)"
         }
+      },
+      "core/site-title": {
+        "typography": {
+          "fontFamily": "var(--wp-preset--font-family--u-pacifico)"
+        }
       }
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--u-rubik)",
+      "fontSize": "16px",
+      "fontStyle": "normal",
+      "fontWeight": "normal",
+      "lineHeight": "inherit",
+      "textDecoration": "none",
+      "textTransform": "none"
+    },
+    "spacing": {
+      "margin": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+      },
+      "padding": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+      },
+      "blockGap": "4rem"
     }
   }
 	
