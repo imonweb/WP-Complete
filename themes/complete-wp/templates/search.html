@@ -1,16 +1,21 @@
 <!-- wp:template-part {"slug":"header","theme":"complete-wp","tagName":"header","className":"shadow"} /-->
 
-<!-- wp:html -->
-<div class="wide-page-header">
-  <div class="inner-page-header">
-    <h1>Category: Cats</h1>
-  </div>
-</div>
-<!-- /wp:html -->
-
 <!-- wp:columns {"style":{"spacing":{"margin":{"top":"4rem","bottom":"4rem"}}},"className":"container !mx-auto"} -->
 <div class="wp-block-columns container !mx-auto" style="margin-top:4rem;margin-bottom:4rem"><!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:query {"queryId":4,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:html -->
+<!-- Search Block -->
+          <div class="wp-block-udemy-plus-search-form">
+            <h1>Search: Your search term here</h1>
+            <form>
+              <input type="text" placeholder="Search" />
+              <div class="btn-wrapper">
+                <button type="submit">Search</button>
+              </div>
+            </form>
+          </div>
+<!-- /wp:html -->
+
+<!-- wp:query {"queryId":4,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->
 <div class="wp-block-query"><!-- wp:post-template -->
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
