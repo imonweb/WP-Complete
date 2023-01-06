@@ -4,9 +4,23 @@
   "name": "complete-plus/fancy-header",
   "title": "Fancy Header",
   "category": "text",
-  "icon": "star-full",
+  "icon": "star-filled",
   "description": "Adds a header with a hover effect",
   "keywords": ["header", "underline", "hover"],
   "version": "1",
-  "textdomain": "complete-plus"
+  "textdomain": "complete-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": ""
+    },
+    "underline_color": {
+      "type": "string",
+      "default": "#f87171"
+    }
+  },
+  "style": "file:./index.css"
+  
 }
