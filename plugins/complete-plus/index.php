@@ -28,3 +28,4 @@ include(CP_PLUGIN_DIR . 'includes/register-blocks.php');
 
 // Hooks
 add_action('init', 'cp_register_blocks');
+
