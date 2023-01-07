@@ -39,15 +39,18 @@ registerBlockType('complete-plus/header-tools', {
           </PanelBody>
         </InspectorControls>
         <div { ...blockProps }>
-          <a className="signin-link open-modal" href="#">
-            <div className="signin-icon">
-              <i className="bi bi-person-circle"></i>
-            </div>
-            <div className="signin-text">
-              <small>Hello, Sign in</small>
-              My Account
-            </div>
-          </a>
+          {
+            showAuth &&
+            <a className="signin-link open-modal" href="#">
+              <div className="signin-icon">
+                <i className="bi bi-person-circle"></i>
+              </div>
+              <div className="signin-text">
+                <small>Hello, Sign in</small>
+                My Account
+              </div>
+            </a> 
+          }
         </div>
       </>
     );

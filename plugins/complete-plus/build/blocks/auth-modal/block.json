@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 2,
+  "name": "complete-plus/auth-modal",
+  "title": "Authentication Modal",
+  "category": "text",
+  "description": "Adds an authentication modal",
+  "textdomain": "complete-plus",
+  "attributes": {
+    "showRegister": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css"
+}
