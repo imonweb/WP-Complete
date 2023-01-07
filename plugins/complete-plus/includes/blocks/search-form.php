@@ -13,7 +13,7 @@ function up_search_form_render_cb($atts)
         <?php esc_html_e('Search', 'complete-plus'); ?> :
         <?php the_search_query(); ?>
       </h1>
-      <form action="<?php echo esc_url(home_url('/')); ?>" method="get">
+      <form action="<?php echo esc_url(home_url('/')); ?>">
         <input 
           type="text" 
           placeholder="<?php esc_html_e('Search', 'complete-plus'); ?>" 

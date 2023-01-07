@@ -6,7 +6,12 @@
   "category": "text",
   "description": "Adds a header toolbar that contains an authentication link",
   "textdomain": "complete-plus",
-  "attributes": {},
+  "attributes": {
+    "showAuth": {
+      "type": "boolean",
+      "default": true
+    }
+  },
   "editorScript": "file:./index.js",
   "style": "file:./index.css"
 }
