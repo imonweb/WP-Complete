@@ -38,4 +38,5 @@ foreach($allFiles as $filename){
 
 // Hooks
 add_action('init', 'cp_register_blocks');
+add_action('rest_api_init', 'up_rest_api_init');
 
