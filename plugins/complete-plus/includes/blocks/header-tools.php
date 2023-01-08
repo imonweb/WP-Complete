@@ -3,7 +3,7 @@
 function up_header_tools_render_cb($atts) {
   ob_start();
   ?>
-    <div class="wp-block-comple-plus-header-tools">
+    <div class="wp-block-complete-plus-header-tools">
       <?php 
         if($atts['showAuth']){
           ?>

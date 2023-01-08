@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody } from '@wordpress/components';
+import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import icons from '../../icons.js'
 import './main.css'
@@ -17,7 +17,16 @@ registerBlockType('complete-plus/auth-modal', {
       <>
         <InspectorControls>
           <PanelBody title={ __('General', 'complete-plus') }>
-            
+            <ToggleControl
+              label={__('Show Register', 'complete-plus')}
+              help={
+                showRegister ?
+                __('Show registration form', 'complete-plus') :
+                __('Hiding registration form', 'complete-plus')
+              }
+              checked={showRegister}
+              onChange={showRegister => setAttributes({ showRegister })}
+            />
           </PanelBody>
         </InspectorControls>
         <div { ...blockProps }>
