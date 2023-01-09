@@ -37,7 +37,13 @@ foreach($allFiles as $filename){
 // include(CP_PLUGIN_DIR . 'includes/blocks/page-header.php');
 
 // Hooks
+register_activation_hook(__FILE__, 'up_activate_plugin');
+
 add_action('init', 'cp_register_blocks');
 add_action('rest_api_init', 'up_rest_api_init');
 add_action('wp_enqueue_scripts', 'up_enqueue_scripts');
+
+// custom post types
+add_action('init', 'up_recipe_post_type');
+add_action('cuisine_add_form_fields', 'up_cuisine_add_form_fields');
 
