@@ -67,7 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       body: JSON.stringify(formData)
     });
+
     const responseJSON = await response.json()
+    
     if(responseJSON.status === 2) {
       signupStatus.innerHTML = `
         <div class="modal-status modal-status-success">
