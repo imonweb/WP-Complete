@@ -46,4 +46,6 @@ add_action('wp_enqueue_scripts', 'up_enqueue_scripts');
 // custom post types
 add_action('init', 'up_recipe_post_type');
 add_action('cuisine_add_form_fields', 'up_cuisine_add_form_fields');
-
+add_action('create_cuisine','up_save_cuisine_meta');
+add_action('cuisine_edit_form_fields', 'up_cuisine_edit_form_fields');
+add_action('edited_cuisine', 'up_save_cuisine_meta');
