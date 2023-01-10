@@ -74,6 +74,16 @@ module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
 /***/ "@wordpress/core-data":
 /*!**********************************!*\
   !*** external ["wp","coreData"] ***!
@@ -201,8 +211,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_core_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../icons.js */ "./src/icons.js");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main.css */ "./src/blocks/recipe-summary/main.css");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../icons.js */ "./src/icons.js");
+/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main.css */ "./src/blocks/recipe-summary/main.css");
+
 
 
 
@@ -213,7 +226,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)('complete-plus/recipe-summary', {
   icon: {
-    src: _icons_js__WEBPACK_IMPORTED_MODULE_6__["default"].primary
+    src: _icons_js__WEBPACK_IMPORTED_MODULE_7__["default"].primary
   },
   edit(_ref) {
     let {
@@ -232,15 +245,19 @@ __webpack_require__.r(__webpack_exports__);
     } = context;
     const [termIDs] = (0,_wordpress_core_data__WEBPACK_IMPORTED_MODULE_4__.useEntityProp)('postType', 'recipe', 'cuisine', postId);
     const {
-      cuisines
+      cuisines,
+      isLoading
     } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.useSelect)(select => {
       const {
-        getEntityRecords
+        getEntityRecords,
+        isResolving
       } = select('core');
+      const taxonomyArgs = ['taxonomy', 'cuisine', {
+        include: termIDs
+      }];
       return {
-        cuisines: getEntityRecords('taxonomy', 'cuisine', {
-          include: termIDs
-        })
+        cuisines: getEntityRecords(...taxonomyArgs),
+        isLoading: isResolving('getEntityRecords', taxonomyArgs)
       };
     }, [termIDs]);
     console.log(cuisines);
@@ -297,7 +314,12 @@ __webpack_require__.r(__webpack_exports__);
       className: "recipe-title"
     }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Cuisine', 'complete-plus')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "recipe-data recipe-cuisine"
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    }, isLoading && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Spinner, null), !isLoading && cuisines && cuisines.map((item, index) => {
+      const comma = cuisines[index + 1] ? ',' : '';
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+        href: item.meta.more_info_url
+      }, item.name), " ", comma);
+    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       className: "bi bi-egg-fried"
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "recipe-metadata"

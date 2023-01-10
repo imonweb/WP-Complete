@@ -3,6 +3,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { useEntityProp } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data'
+import { Spinner } from '@wordpress/components'
 import icons from '../../icons.js';
 import './main.css';
 
@@ -17,13 +18,19 @@ registerBlockType('complete-plus/recipe-summary', {
 
     const [termIDs] = useEntityProp('postType', 'recipe', 'cuisine', postId)
 
-    const {cuisines} = useSelect( (select) => {
-      const { getEntityRecords } = select('core')
+    const {cuisines, isLoading} = useSelect( (select) => {
+      const { getEntityRecords, isResolving } = select('core')
+
+      const taxonomyArgs = [
+        'taxonomy',
+        'cuisine', {
+          include: termIDs
+        }
+      ]
 
       return {
-        cuisines: getEntityRecords('taxonomy', 'cuisine', {
-          include: termIDs
-        })
+        cuisines: getEntityRecords(...taxonomyArgs),
+        isLoading: isResolving('getEntityRecords', taxonomyArgs)
       }
     }, [termIDs])
 
@@ -74,6 +81,23 @@ registerBlockType('complete-plus/recipe-summary', {
               <div className="recipe-metadata">
                 <div className="recipe-title">{__('Cuisine', 'complete-plus')}</div>
                 <div className="recipe-data recipe-cuisine">
+                  {
+                    isLoading && 
+                    <Spinner />
+                  }
+                  {
+                    !isLoading && cuisines && cuisines.map((item, index) => {
+                      const comma = cuisines[index + 1] ? ',' : ''
+
+                      return(
+                        <>
+                          <a href={item.meta.more_info_url}>
+                            {item.name}
+                          </a> {comma}
+                        </>
+                      )
+                    })
+                  }
                 </div>
               </div>
               <i className="bi bi-egg-fried"></i>
