@@ -1,7 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-import { useEntityProp } from '@wordpress/core-data'
+import { useEntityProp } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data'
 import icons from '../../icons.js';
 import './main.css';
@@ -15,11 +15,9 @@ registerBlockType('complete-plus/recipe-summary', {
     const blockProps = useBlockProps();
     const { postId } = context 
 
-    const [termIDs] = useEntityProp(
-      'postType', 'recipe', 'cuisine', postId
-    )
+    const [termIDs] = useEntityProp('postType', 'recipe', 'cuisine', postId)
 
-    const {cuisines} = useSelect((select) => {
+    const {cuisines} = useSelect( (select) => {
       const { getEntityRecords } = select('core')
 
       return {
@@ -30,6 +28,7 @@ registerBlockType('complete-plus/recipe-summary', {
     }, [termIDs])
 
     console.log(cuisines);
+
 
     return (
       <>
@@ -75,18 +74,6 @@ registerBlockType('complete-plus/recipe-summary', {
               <div className="recipe-metadata">
                 <div className="recipe-title">{__('Cuisine', 'complete-plus')}</div>
                 <div className="recipe-data recipe-cuisine">
-                  {
-                    cuisines && cuisines.map((item, index) => {
-                      const comma = cuisines[index + 1] ? ',' : ''
-                      return (
-                        <>
-                          <a href={item.meta.more_info_url}>
-                            {item.name}
-                          </a> {comma}
-                        </>
-                      )
-                    })
-                  }
                 </div>
               </div>
               <i className="bi bi-egg-fried"></i>

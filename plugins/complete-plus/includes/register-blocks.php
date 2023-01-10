@@ -19,7 +19,11 @@ function cp_register_blocks() {
     [
       'name' => 'recipe-summary', 'option' => [
         'render_callback' => 'up_recipe_summary_render_cb'
-    ]]  
+    ]],
+    [
+      'name' => 'recipe-summary', 'option' => [
+      'render_callback' => 'up_recipe_summary_render_cb'
+    ]]    
   ];
 
   foreach($blocks as $block) {

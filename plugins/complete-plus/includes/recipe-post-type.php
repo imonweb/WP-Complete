@@ -52,7 +52,7 @@ function up_recipe_post_type() {
     'label'         =>  __('Cuisine', 'complete-plus'),
     'rewrite'       =>  ['slug' => 'cuisine'],
     'show_in_rest'  =>  true
-  ] );
+  ]);
 
 	register_term_meta( 'cuisine', 'more_info_url', [
 		'type' 					=> 'string',

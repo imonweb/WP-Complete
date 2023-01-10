@@ -297,12 +297,7 @@ __webpack_require__.r(__webpack_exports__);
       className: "recipe-title"
     }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Cuisine', 'complete-plus')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "recipe-data recipe-cuisine"
-    }, cuisines && cuisines.map((item, index) => {
-      const comma = cuisines[index + 1] ? ',' : '';
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-        href: item.meta.more_info_url
-      }, item.name), " ", comma);
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       className: "bi bi-egg-fried"
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "recipe-metadata"
