@@ -18,5 +18,7 @@
     }
   },
   "editorScript": "file:./index.js",
-  "style": "file:./index.css"
+  "style": "file:./index.css",
+  "usesContext": ["postId"]
+  
 }

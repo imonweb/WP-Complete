@@ -53,5 +53,14 @@ function up_recipe_post_type() {
     'rewrite'       =>  ['slug' => 'cuisine'],
     'show_in_rest'  =>  true
   ] );
+
+	register_term_meta( 'cuisine', 'more_info_url', [
+		'type' 					=> 'string',
+		'description' 	=> __('A URL for more information on a cuisine', 'complete-plus'),
+		'single'				=> true,
+		'show_in_rest'	=> true,
+		'default'				=> '#'
+	]);
+	
   
 }
