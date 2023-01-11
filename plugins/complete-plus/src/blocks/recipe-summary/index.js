@@ -34,7 +34,15 @@ registerBlockType('complete-plus/recipe-summary', {
       }
     }, [termIDs])
 
-    console.log(cuisines);
+    const { rating } = useSelect(select => {
+      const { getCurrentPostAttribute } = select('core/editor')
+
+      return { 
+        rating: getCurrentPostAttribute('meta').recipe_rating
+      }
+    })
+
+    console.log(rating);
 
 
     return (
