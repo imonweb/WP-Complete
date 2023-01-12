@@ -76,6 +76,7 @@ logs.log
 # !wp-content/mu-plugins/
 # !wp-content/plugins/
 # !wp-content/themes/
+themes/
 
 #ignore specific plugins
 themes/
