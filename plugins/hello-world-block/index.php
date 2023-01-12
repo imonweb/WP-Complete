@@ -13,7 +13,7 @@
  **/
 
 add_action('enqueue_block_editor_assets', 'hwb_enqueue_editor_assets', 10, 1);
-add_ation('enqueue_block_assets', 'hwb_enqueue_assets', 10, 1);
+add_action('enqueue_block_assets', 'hwb_enqueue_assets', 10, 1);
 
 function hwb_enqueue_editor_assets() {
   wp_enqueue_script(
