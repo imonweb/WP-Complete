@@ -68,22 +68,22 @@ logs.log
 #composer.json
 
 # ignore everything in the root except  the "wp-content" directory.
-# !wp-content/
+ 
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
 # wp-content/*
-# !wp-content/mu-plugins/
-# !wp-content/plugins/
-# !wp-content/themes/
-themes/
+ 
+!wp-content/plugins/complete-plus
+ 
+ 
 
 #ignore specific plugins
-themes/
+themes/twenty*/
 #ignore specific themes
 # themes/twenty*/
 # WP-Complete/themes/
-# !themes/complete-plus/
+ 
 
 # ignore node dependency directories
 # node_modules
