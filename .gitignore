@@ -78,11 +78,10 @@ logs.log
 # !wp-content/themes/
 
 #ignore specific plugins
-WP-Complete/plugins/hello.php 
-
+WP-Complete/
 #ignore specific themes
 # themes/twenty*/
-WP-Complete/themes/
+# WP-Complete/themes/
 !themes/complete-plus/
 
 # ignore node dependency directories
