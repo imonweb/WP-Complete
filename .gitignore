@@ -78,12 +78,12 @@ logs.log
 # !wp-content/themes/
 
 #ignore specific plugins
-wp-content/plugins/hello.php 
+WP-Complete/plugins/hello.php 
 
 #ignore specific themes
-themes/twenty*/
-WP-Complete/themes
-# !themes/complete-plus/
+# themes/twenty*/
+WP-Complete/themes/
+!themes/complete-plus/
 
 # ignore node dependency directories
 # node_modules
