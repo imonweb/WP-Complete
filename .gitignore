@@ -82,7 +82,7 @@ wp-content/plugins/hello.php
 
 #ignore specific themes
 themes/twenty*/
-themes/
+WP-Complete/themes/
 !themes/complete-plus/
 
 # ignore node dependency directories
