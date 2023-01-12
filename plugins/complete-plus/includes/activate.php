@@ -11,7 +11,7 @@ function up_activate_plugin() {
 
   global $wpdb;
   $tableName = "{$wpdb->prefix}recipe_rating";
-  $charsetCollate = $wpdb->get_charset_collate;
+  $charsetCollate = $wpdb->get_charset_collate();
 
   $sql = "CREATE TABLE {$tableName} (
   ID bigint(20) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
