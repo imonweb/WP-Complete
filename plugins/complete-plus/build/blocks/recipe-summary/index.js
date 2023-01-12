@@ -12300,7 +12300,7 @@ __webpack_require__.r(__webpack_exports__);
       className: "recipe-data"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_material_Rating_index_js__WEBPACK_IMPORTED_MODULE_9__["default"], {
       value: rating,
-      readOnly: true
+      read: true
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       className: "bi bi-hand-thumbs-up"
     })))));

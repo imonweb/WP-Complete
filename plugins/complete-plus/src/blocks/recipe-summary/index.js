@@ -116,7 +116,7 @@ registerBlockType('complete-plus/recipe-summary', {
               <div className="recipe-data">
                 <Rating 
                   value={rating}
-                  readOnly
+                  read
                 />
               </div>
               <i className="bi bi-hand-thumbs-up"></i>

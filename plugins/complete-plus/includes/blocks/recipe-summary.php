@@ -1,9 +1,22 @@
 <?php 
 
-function up_recipe_summary_render_cb($atts) {
+function up_recipe_summary_render_cb($atts, $content, $block) {
   $prepTime = isset($atts['prepTime']) ? esc_html($atts['prepTime']) : '' ;
   $cookTime = isset($atts['cookTime']) ? esc_html($atts['cookTime']) : '' ;
   $course = isset($atts['course']) ? esc_html($atts['course']) : '' ;
+
+  $postID = $block->context['postId'];
+  $postTerms = get_the_terms($postID, 'cuisine');
+  $postTerms = is_arry($postTerms) ? $postTerms : [];
+  $cuisines = '';
+  $lastKey = array_key_last($postTerms);
+
+  foreach($postTerms as $key => $term){
+    $url = get_term_meta($term->term_id, 'more_info_url', true);
+    $comma = $key === $lastKey ? '' : ',';
+
+    $cuisines .= "<a href='{$url}' target='_blank'>{$term->term_name}</a>{$comma} ";
+  }
 
    ob_start();
   ?> 
@@ -42,7 +55,7 @@ function up_recipe_summary_render_cb($atts) {
               <?php _e('Cuisine', 'complete-plus'); ?>
             </div>
             <div class="recipe-data recipe-cuisine">
-
+              <?php echo $cuisines; ?>
             </div>
           </div>
           <i class="bi bi-egg-fried"></i>

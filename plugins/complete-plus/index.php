@@ -19,7 +19,7 @@ if(!function_exists('add_action')){
   echo 'Seems like you stumbled here by accident.';
   exit;
 }
-
+ 
 // Setup
 define('CP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
