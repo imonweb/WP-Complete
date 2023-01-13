@@ -7,7 +7,7 @@ function up_recipe_summary_render_cb($atts, $content, $block) {
 
   $postID = $block->context['postId'];
   $postTerms = get_the_terms($postID, 'cuisine');
-  $postTerms = is_arry($postTerms) ? $postTerms : [];
+  $postTerms = is_array($postTerms) ? $postTerms : [];
   $cuisines = '';
   $lastKey = array_key_last($postTerms);
 

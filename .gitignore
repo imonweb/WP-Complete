@@ -74,12 +74,19 @@ logs.log
 # "mu-plugins", "plugins", "themes" directory
 # wp-content/*
  
-!wp-content/plugins/complete-plus
- 
+!plugins/complete-plus
+contact-form-7/
+fakerpress/
+hello-world-block/
+udemy-plus/
+wp-fastests-cache/
+akismet/
  
 
 #ignore specific plugins
-themes/twenty*/
+themes/twentythree/
+themes/brandify/
+themes/blockify
 #ignore specific themes
 # themes/twenty*/
 # WP-Complete/themes/
